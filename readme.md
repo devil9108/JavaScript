@@ -1,7 +1,5 @@
 # Execution Context
 
----
-
 Execution Context is an environment where the javascript code runs and executes.
 
 ## Types of Execution Contexts

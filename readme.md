@@ -37,4 +37,27 @@ Execution Context is an environment where the javascript code runs and executes.
 
 # Execution Stack
 
-![Image](/images/execution-stack.png)
+Execution stack, also known as “calling stack” in other programming languages, is a stack with a LIFO (Last in, First out) structure, which is used to store all the execution context created during the code execution.
+
+When the javascript engine first encount the code. It creates the global execution context and pushes to the current execution stack. Whenever it findes any function invocation, then it pushes that execution context to current execution stack. And starts the execting the code init. When ever it completes the execution of that function it will pop that function execution context from the current execution stack and continues the code execution of the top execution context present in that stack.
+
+> The engine executes the function whose execution context is at the top of the stack. When this function completes, its execution stack is popped off from the stack, and the control reaches to the context below it in the current stack.
+
+Let’s understand this with a code example below:
+
+```
+let a = 'Hello World!';
+function first() {
+  console.log('Inside first function');
+  second();
+  console.log('Again inside first function');
+}
+function second() {
+  console.log('Inside second function');
+}
+first();
+console.log('Inside Global Execution Context');
+```
+
+> An Execution Context Stack for the above code.
+> ![Image](/images/execution-stack.png)

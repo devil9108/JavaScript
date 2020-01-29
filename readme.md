@@ -1,6 +1,6 @@
-#2020 JS New Features
+# 2020 JS New Features
 
-##globalThis
+## globalThis
 
 To get the window object we use `window` or `this` in the JS which referse to the window Object.
 
